@@ -213,6 +213,7 @@ export class InfodisplayComponent implements OnInit, OnDestroy {
   }
 
   loadSearch(event: any) {
+    this.loading = true;
     this.mapsAPILoader.load().then(() => {
       this.ngZone.run(() => {
         const geocoder = new google.maps.Geocoder();
@@ -228,6 +229,7 @@ export class InfodisplayComponent implements OnInit, OnDestroy {
             this.getCarParks();
             this.getSupermarkets();
             this.getPetrolStations();
+            this.loading = false;
           }
         });
       });
