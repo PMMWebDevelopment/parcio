@@ -114,7 +114,7 @@ export class InfodisplayComponent implements OnInit, OnDestroy {
   getCarParks() {
     this.carParkSubscription = this.http
       .get(
-        "/googlemaps/json?&key=" +
+        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?&key=" +
           environment.googleMaps.apiKey +
           "&location=" +
           this.latitude +
@@ -141,7 +141,7 @@ export class InfodisplayComponent implements OnInit, OnDestroy {
   getSupermarkets() {
     this.supermarketSubscription = this.http
       .get(
-        "/googlemaps/json?&key=" +
+        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?&key=" +
           environment.googleMaps.apiKey +
           "&location=" +
           this.latitude +
@@ -168,7 +168,7 @@ export class InfodisplayComponent implements OnInit, OnDestroy {
   getPetrolStations() {
     this.petrolStationSubscription = this.http
       .get(
-        "/googlemaps/json?&key=" +
+        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?&key=" +
           environment.googleMaps.apiKey +
           "&location=" +
           this.latitude +
