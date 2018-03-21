@@ -14,6 +14,7 @@ export class PetrolComponent implements OnInit, OnDestroy {
   petrolStations = [];
 
   constructor(private dataService: DataService) {
+    this.petrolStations = [];
     this.petrolStationSubscription = this.dataService.petrolStations$.subscribe((petrolStations: any[] ) => {
       this.petrolStations = petrolStations;
     });

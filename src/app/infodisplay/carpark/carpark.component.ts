@@ -14,6 +14,7 @@ export class CarparkComponent implements OnInit, OnDestroy {
   carParks = [];
 
   constructor(private dataService: DataService) {
+    this.carParks = [];
     this.carParkSubscription = this.dataService.carParks$.subscribe((carParks: any[] ) => {
       this.carParks = carParks;
     });

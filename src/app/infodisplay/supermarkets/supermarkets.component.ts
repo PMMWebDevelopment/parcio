@@ -13,6 +13,7 @@ export class SupermarketsComponent implements OnInit, OnDestroy {
   supermarkets = [];
 
   constructor(private dataService: DataService) {
+    this.supermarkets = [];
     this.supermarketsSubscription = this.dataService.supermarkets$.subscribe((supermarkets: any[] ) => {
       this.supermarkets = supermarkets;
     });
