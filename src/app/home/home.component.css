@@ -1,0 +1,22 @@
+app-home {
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 75%;
+    display: block;
+    overflow: auto;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+img {
+    margin-bottom: 20px;
+}

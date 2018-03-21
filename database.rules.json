@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "searches": {
+      ".indexOn": "user",
+      ".read": true,
+      ".write": true
+    }
+  }
+}

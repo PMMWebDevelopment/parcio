@@ -8,12 +8,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ]
+    "allowJs": true,
+    "typeRoots": ["node_modules/@types"],
+    "types": ["firebase", "node", "lodash", "googlemaps"],
+    "lib": ["es2017", "dom"]
   }
 }

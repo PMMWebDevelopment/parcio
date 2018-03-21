@@ -1,0 +1,13 @@
+footer {
+    position: relative;
+    bottom: 0px;
+    height: 40px;
+    margin-top: 20px;
+    font-family: "Raleway-Regular", sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+h6 {
+    text-shadow: 1px 1px 1px black;
+}

@@ -1,0 +1,70 @@
+.container-fluid {
+    background-color: rgba(0, 0, 0, 0.75);
+    display: block;
+    overflow: auto;
+}
+
+#searchRow {
+    padding-top: 10px;
+    min-height: 10%;
+    width: 100%;
+}
+
+.form-control {
+    float: left;
+    width: 75%;
+    margin-right: 5px;
+}
+
+#destination {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+#loadsave {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+#info-panels {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 400px;
+    width: 100%;
+}
+
+#parking {
+    height: 100%;
+}
+
+#mapcontainer {
+    height: 100%;
+    width: 100%;
+}
+
+div agm-map {
+    width: 100%;
+    height: 100%;
+}
+
+#load-delete-modal-label {
+    color: black;
+}
+
+.modal-dialog {
+    width: 600px;
+}
+
+.modal-body {
+    color: black;
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+#save-button,
+#load-delete-button {
+    margin-bottom: 10px;
+}

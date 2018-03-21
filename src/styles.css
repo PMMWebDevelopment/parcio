@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@font-face {
+    font-family: "Raleway-Regular";
+    src: url("./assets/fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+}
+
+body,
+app-root {
+    background-image: url("./assets/images/parkedcars.jpg");
+    background-position: center center;
+    background-size: cover;
+    font-family: "Raleway-Regular", sans-serif;
+    color: white;
+    min-height: 1vh;
+}

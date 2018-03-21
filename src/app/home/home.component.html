@@ -1,0 +1,24 @@
+<div class='app-home'>
+    <div class='jumbotron'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-8 offset-md-2'>
+                    <h1><span class='front-page-logo'><img src='./assets/images/parciologo.png'></span> PARCIO</h1>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-8 offset-md-2'>
+                    <h4>Going somewhere unfamiliar by car or minibus?</h4>
+                    <h4>Going somewhere on holiday?</h4>
+                    <p>Find out here where to park, where to shop for groceries and where to fill up, anywhere in the world!</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-8 offset-md-2'>
+                    <button *ngIf='!(authService.user | async); else enterInfoDisplay' class='btn btn-primary' id='seeDemo' routerLink='infodisplay'>See a demo here</button>
+                    <ng-template #enterInfoDisplay><button class='btn btn-primary' id='seeDemo' routerLink='infodisplay'>Go to Info Display page</button></ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

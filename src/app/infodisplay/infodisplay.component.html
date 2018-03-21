@@ -1,0 +1,59 @@
+<div class='container-fluid'>
+    <div id='searchRow' class='row'>
+        <div class="form-group col-md-4">
+            <input placeholder="Location/postcode" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+            <button id='searchButton2' class='btn btn-md btn-primary' type='button' (click)='getMap($event)'>Go!</button>
+        </div>
+        <div id='destination' class='col-md-4'>Destination:
+            <b>{{ destinationCaption }}</b>
+        </div>
+        <div id='loadsave' class='col-md-4' *ngIf='this.loginStatus === true'>
+            <button type='button' id='save-button' class='btn btn-sm btn-success' (click)='saveSearch($event)'>Save</button>
+            <button type='button' id='load-delete-button' class='btn btn-sm btn-primary' data-toggle="modal" data-target="#load-delete-modal" (click)='loadSearches($event)'>Load/Delete</button>
+            <!-- Load/Delete Search Modal -->
+            <div class="modal fade" id="load-delete-modal" tabindex="-1" role="dialog" aria-labelledby="load-delete-modal-label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="load-delete-modal-label">Load/Delete</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div *ngFor='let search of searches' class='row'>
+                                <div class='col-md-6'>
+                                    <h6>{{ search[0] }}</h6>
+                                </div>
+                                <div class='col-md-6'>
+                                    <button type='button' style='margin-bottom: 10px;' id='load-button' class='btn btn-sm btn-primary' (click)='loadSearch($event)' data-dismiss="modal">Load</button>
+                                    <!-- <button type='button' style='margin-bottom: 10px;' id='export-button' class='btn btn-sm btn-warning' (click)='exportSearch($event)'>Export</button> -->
+                                    <button type='button' style='margin-bottom: 10px;' id='delete-button' class='btn btn-sm btn-danger' (click)='deleteSearch($event)' data-dismiss="modal">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Load/Delete Search Modal -->
+        </div>
+        <div id='loadsave' class='col-md-4' *ngIf='this.loginStatus === false'>
+            <p>You will need to sign up for an account and log in to save any searches.</p>
+        </div>
+    </div>
+    <div id='info-panels' class='row'>
+        <div class='col-md-4' id='parking'>
+            <app-carpark></app-carpark>
+            <app-supermarkets></app-supermarkets>
+            <app-petrol></app-petrol>
+        </div>
+        <div id='mapcontainer' class='col-md-8'>
+            <agm-map id='map' [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="zoom">
+                <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                <agm-marker *ngFor='let marker of carParkMarkers' [latitude]='marker[0]' [longitude]='marker[1]' [title]='marker[2]' iconUrl='../../assets/images/parking-meter-export.png'></agm-marker>
+                <agm-marker *ngFor='let marker of supermarketMarkers' [latitude]='marker[0]' [longitude]='marker[1]' [title]='marker[2]' iconUrl='../../assets/images/supermarket.png'></agm-marker>
+                <agm-marker *ngFor='let marker of petrolStationMarkers' [latitude]='marker[0]' [longitude]='marker[1]' [title]='marker[2]' iconUrl='../../assets/images/fillingstation.png'></agm-marker>
+            </agm-map>
+        </div>
+    </div>
+</div>

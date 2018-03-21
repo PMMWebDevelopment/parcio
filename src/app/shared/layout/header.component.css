@@ -1,0 +1,33 @@
+.container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+#top-logo h3 {
+    font-weight: bold;
+    text-shadow: 2px 2px 1px black;
+}
+
+#top-logo img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#signup-login-modal-label {
+    color: black;
+}
+
+.modal-dialog {
+    width: 600px;
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+.btn-primary {
+    margin-bottom: 10px;
+}

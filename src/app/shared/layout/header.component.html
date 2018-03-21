@@ -1,0 +1,41 @@
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-4' id='top-logo'>
+            <h3 *ngIf="handleRouteChange()"><span class='front-page-logo'><img src='./assets/images/parciologo.png'></span> PARCIO</h3>
+        </div>
+        <div class='col-md-4'>
+            <button class='btn btn-sm btn-primary' routerLink=''>Home</button>
+            <button *ngIf="!(authService.user | async); else showLogoutButton" class='btn btn-sm btn-primary' data-toggle="modal" data-target="#signup-login-modal">Sign up/Log in</button>
+            <!-- Signup / Login Modal -->
+            <div class="modal fade" id="signup-login-modal" tabindex="-1" role="dialog" aria-labelledby="signup-login-modal-label" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="signup-login-modal-label">Sign up / Log in</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <input type="text" [(ngModel)]="email" placeholder="e-mail address">
+                                <input type="password" [(ngModel)]="password" placeholder="password">
+                            </div>
+                            <div class='buttons'>
+                                <button class='btn btn-sm btn-primary' (click)="signup()" [disabled]="!email || !password" data-dismiss="modal">Sign up</button>
+                                <button class='btn btn-sm btn-primary' (click)="login()" [disabled]="!email || !password" data-dismiss="modal">Log in</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Signup / Login Modal -->
+
+            <!-- What is displayed if user logged in -->
+            <ng-template #showLogoutButton><button class='btn btn-sm btn-primary' routerLink='' (click)='logout()'>Log out</button></ng-template>
+        </div>
+        <div class='col-md-4'>
+            <div *ngIf='(authService.user | async)'>Logged in as <b>{{ userDisplayName }}</b></div>
+        </div>
+    </div>
+</div>

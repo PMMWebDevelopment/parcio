@@ -1,0 +1,13 @@
+#carParks {
+    height: 27.5%;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+h6 {
+    font-weight: bold;
+}
+
+li {
+    font-size: 12px;
+}
