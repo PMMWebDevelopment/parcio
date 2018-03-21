@@ -23,7 +23,8 @@ export class PetrolComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-
+    this.petrolStationSubscription.unsubscribe();
+    this.petrolStations = [];
   }
 
 }

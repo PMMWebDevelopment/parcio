@@ -22,5 +22,6 @@ export class SupermarketsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.supermarketsSubscription.unsubscribe();
+    this.supermarkets = [];
   }
 }

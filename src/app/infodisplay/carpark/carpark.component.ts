@@ -23,5 +23,6 @@ export class CarparkComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.carParkSubscription.unsubscribe();
+    this.carParks = [];
   }
 }
