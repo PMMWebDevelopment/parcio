@@ -1,4 +1,4 @@
-// Bas display modules and shared components
+// Base display modules and shared components
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
@@ -10,6 +10,7 @@ import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeModule } from "./home/home.module";
 import { SharedModule, FooterComponent, HeaderComponent } from "./shared";
+import { LoadingModule } from "ngx-loading";
 
 // Forms modules
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -54,6 +55,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], {
     AgmCoreModule.forRoot(environment.googleMaps),
     BrowserModule,
     BrowserAnimationsModule,
+    LoadingModule,
     HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),

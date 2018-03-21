@@ -43,6 +43,7 @@
         "jquery-ui-dist": "^1.12.1",
         "lodash": "^4.17.5",
         "ngx-electron": "^1.0.4",
+        "ngx-loading": "^1.0.14",
         "popper": "^1.0.1",
         "popper.js": "^1.12.9",
         "promise-polyfill": "7.1.0",

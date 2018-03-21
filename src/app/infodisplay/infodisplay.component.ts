@@ -22,6 +22,7 @@ import { Subscription } from "rxjs/Subscription";
   styleUrls: ["./infodisplay.component.css"]
 })
 export class InfodisplayComponent implements OnInit, OnDestroy {
+  public loading = false;
   public latitude: number;
   public longitude: number;
   public searchControl: FormControl;
@@ -105,16 +106,18 @@ export class InfodisplayComponent implements OnInit, OnDestroy {
   }
 
   getMap(event: any) {
+    this.loading = true;
     this.destinationCaption = event.currentTarget.parentNode.children[0].value;
     this.getCarParks();
     this.getSupermarkets();
     this.getPetrolStations();
+    this.loading = false;
   }
 
   getCarParks() {
     this.carParkSubscription = this.http
       .get(
-        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?&key=" +
+        "https://quiet-sea-66169.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?&key=" +
           environment.googleMaps.apiKey +
           "&location=" +
           this.latitude +
@@ -141,7 +144,7 @@ export class InfodisplayComponent implements OnInit, OnDestroy {
   getSupermarkets() {
     this.supermarketSubscription = this.http
       .get(
-        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?&key=" +
+        "https://quiet-sea-66169.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?&key=" +
           environment.googleMaps.apiKey +
           "&location=" +
           this.latitude +
@@ -168,7 +171,7 @@ export class InfodisplayComponent implements OnInit, OnDestroy {
   getPetrolStations() {
     this.petrolStationSubscription = this.http
       .get(
-        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?&key=" +
+        "https://quiet-sea-66169.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?&key=" +
           environment.googleMaps.apiKey +
           "&location=" +
           this.latitude +
